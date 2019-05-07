@@ -18,6 +18,7 @@ public class RootEndpoint {
   public Response listResources(@Context UriInfo uriInfo) {
     String healthURL = (uriInfo.getAbsolutePath() + "/health").replaceAll("(?<!http:)\\/\\/", "/");
     String exampleURL = (uriInfo.getAbsolutePath() + "/v1/example").replaceAll("(?<!http:)\\/\\/", "/");
+    String weatherReportURL = (uriInfo.getAbsolutePath() + "/v1/weatherReport").replaceAll("(?<!http:)\\/\\/", "/");
     return Response.ok("{\"health\":\"" + healthURL + "\",\"example\":\"" + exampleURL + "\"}").build();
   }
 
